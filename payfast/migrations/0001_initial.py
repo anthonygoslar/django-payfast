@@ -43,7 +43,7 @@ class Migration(migrations.Migration):
                 ('updated_at', models.DateTimeField(default=timezone.now)),
                 ('request_ip', models.GenericIPAddressField(null=True, blank=True)),
                 ('debug_info', models.CharField(max_length=255, null=True, blank=True)),
-                ('trusted', models.NullBooleanField(default=None)),
+                ('trusted', models.BooleanField(null=True)),
                 ('user', models.ForeignKey(blank=True, to=settings.AUTH_USER_MODEL, null=True, on_delete=models.CASCADE)),
             ],
             options={

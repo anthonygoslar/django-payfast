@@ -3,7 +3,7 @@ from __future__ import unicode_literals
 import six
 from django.db import models
 from django.conf import settings
-from django.utils.encoding import python_2_unicode_compatible
+from six import python_2_unicode_compatible
 
 from payfast import readable_models
 
@@ -54,7 +54,7 @@ class PayFastOrder(six.with_metaclass(readable_models.ModelBase, models.Model)):
     updated_at = models.DateTimeField(auto_now=True)
     request_ip = models.GenericIPAddressField(null=True, blank=True)
     debug_info = models.CharField(max_length=255, null=True, blank=True)
-    trusted = models.NullBooleanField(default=None)
+    trusted = models.BooleanField(null=True)
     user = models.ForeignKey(settings.AUTH_USER_MODEL, null=True, blank=True,
                              on_delete=models.CASCADE)
 
