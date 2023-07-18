@@ -22,3 +22,5 @@ htmlcov/
 # Test database
 payfast_tests/db.sqlite
 
+# Pycharm
+.idea/
