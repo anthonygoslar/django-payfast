@@ -12,8 +12,8 @@ else:
 
 TEST_MODE = getattr(settings, 'PAYFAST_TEST_MODE', False)
 
-TEST_MERCHANT_ID = '10000100'
-TEST_MERCHANT_KEY = '46f0cd694581a'
+TEST_MERCHANT_ID = getattr(settings, 'TEST_MERCHANT_ID', '10000100')
+TEST_MERCHANT_KEY = getattr(settings, 'TEST_MERCHANT_KEY', '46f0cd694581a')
 
 if TEST_MODE:
     # real id and key don't work in sandbox
