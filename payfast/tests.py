@@ -7,7 +7,7 @@ from collections import OrderedDict
 
 import django
 from django.conf import settings
-from django.contrib.auth.models import User
+from django.contrib.auth import get_user_model
 from django.test import TestCase, SimpleTestCase, override_settings
 
 from payfast import api
@@ -15,6 +15,8 @@ from payfast import conf
 from payfast.forms import notify_url, PayFastForm, is_payfast_ip_address
 from payfast.models import PayFastOrder
 import payfast.signals
+
+User = get_user_model()
 
 
 class PayFastFormTest(TestCase):
